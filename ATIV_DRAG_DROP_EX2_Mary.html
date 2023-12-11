@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+       <style>
+        #div1 {
+          width: 200px;
+          height: 200px;
+          padding: 10px;
+          border: 1px solid #aaaaaa;
+        }
+ 
+        #div2 {
+          width: 200px;
+          height: 200px;
+          padding: 10px;
+          border: 1px solid #aaaaaa;
+        }
+        </style>
+ 
+</head>
+<body>
+   
+    <script>
+        function allowDrop(ev) {
+          ev.preventDefault();
+        }
+       
+        function drag(ev) {  //drag = o que segue  ponteiro/ arrastar
+          ev.dataTransfer.setData("text", ev.target.id);
+        }
+       
+        function drop(ev) { // drop = soltar
+          ev.preventDefault();
+          var data = ev.dataTransfer.getData("text");
+          ev.target.appendChild(document.getElementById(data));
+        }
+        </script>
+        </head>
+        <body>
+       
+        <p>Escolha um doce e um salgado para cada quadrado </p>
+       
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div> <!--ondrop = ocorre quando o elementoarrastado sobre o destino
+        ondragover = ocorre o elemento sobre o alvo gota-->
+        <br>
+        <img id="drag1" src="img/kisspng-crispy-fried-chicken-church-s-chicken-fried-fish-c-5b0473971ab950.7913184615270183911095.png" draggable="true" ondragstart="drag(event)" width="100" height="100">
+        <img id="drag2" src="img/kisspng-chocolate-chip-cookie-bakery-chocolate-brownie-ban-chocolate-cookies-5a843b1818b430.8689010615186153201012.png" draggable="true" ondragstart="drag(event)" width="100" height="100">
+        <img id="drag3" src="img/kisspng-aa-na-tigela-aa-palm-ice-cream-smoothie-re-5b134e951bfdc4.9874702815279919571147.png" draggable="true" ondragstart="drag(event)" width="100" height="100">
+        <img id="drag4" src="img/kisspng-hamburger-fried-chicken-chicken-sandwich-chicken-n-fried-chicken-5a6f0e28196607.3954124415172275601041.png"true" ondragstart="drag(event)" width="100" height="100">
+        <!--segue o ponteiro do mouse durante sobreposição-->
+    
+</body>
+</html>

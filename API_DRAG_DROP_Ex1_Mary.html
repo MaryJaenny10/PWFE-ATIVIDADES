@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+          width: 350px;
+          height: 70px;
+          padding: 10px;
+          border: 1px solid #aaaaaa;
+          
+        }
+        </style>
+</head>
+<body>
+   
+    <!--ondrop: ocorre quando o elemento arrastado é solto sobre o destino de soltar-->
+    <!--ondragovar: ocorre quando o elemento é arrastado sobre o alvo gota-->
+    <!--drop: ele solta -->
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <br>
+<!--Draggable: Uma representação translúcida de elementos arrastáveis.-->
+<!-- Drag: seguem o ponteiro do mouse durante a operação de arrastar -->
+<!-- Ondragsatrt: dispara quando o usuário começa a arrastar um elemento-->
+    <img id="drag1" src="img/coraca.jpg" draggable="true" ondragstart="drag(event)" width="336" height="69">
+
+    <script src="JS/script11.js"></script>
+</body>
+</html>
